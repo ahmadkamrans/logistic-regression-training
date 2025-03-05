@@ -1,4 +1,4 @@
-# logistic-regression-training
+# Logistic Regression Training
 
 ### Overview
 - Popular Home Features example for basic understanding of the Logistic Regression
