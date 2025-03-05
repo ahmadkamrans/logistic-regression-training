@@ -55,7 +55,7 @@
 
 - Now, visualizing the base data points in dataset, the predicted values by the model:
 
-![alt text](images/LogisticRegressionModel.png)
+![alt text](images/LogisticRegiression2.png)
 
 - Calculating the cost which is between the actual data point, and the predicted point. (i.e: point is price)
 
