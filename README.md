@@ -37,7 +37,27 @@
   ```
 
   the predicted price of the house came: **330.0 $**
-  
+
+#### Single Feature: Logistic Regression Model
+
+- using the same dataset, but this time prediction is done through the Logisitc Regression Model 
+
+- In model function we were assuming the weight, and the bias. But here we are using
+  ```python
+  model.fit(x_train, y_train)
+  ```
+  fit basically adjusts the weight, and bias by learning **y = mx+b**
+
+- The prediction is done through:
+  ```python
+  predicted_price = model.predict([[1.2]])
+  ```
+
+- Now, visualizing the base data points in dataset, the predicted values by the model:
+
+![alt text](images/LogisticRegressionModel.png)
+
+
 
 
 ### Dataset
