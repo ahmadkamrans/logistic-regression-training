@@ -4,7 +4,7 @@
 - Popular Home Features example for basic understanding of the Logistic Regression
 - After that, we will move forward to [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris) 
 
-#### Single Feature: Logistic Regression using Model Funtion
+#### Single Feature: Logistic Regression using Model Function
 - Currently, if you take an example of housing dataset: 
     | Size (1000 sqft) | Price (1000s of dollars) |
     |------------------|--------------------------|
@@ -29,6 +29,15 @@
 
 - Now the function **compute_model_output(x_train, w, b)** will plot the predicted values (prices) on the already placed data points on Scatter plot:
   ![alt text](images/modelFuncPredictedValues.png)
+
+  like if we predict the price for the 1200 square foot house:
+  ```python
+    x_i = 1.2
+    predict = w * x_i + b
+  ```
+
+  the predicted price of the house came: **330.0 $**
+  
 
 
 ### Dataset
