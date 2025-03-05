@@ -57,7 +57,20 @@
 
 ![alt text](images/LogisticRegressionModel.png)
 
+- Calculating the cost which is between the actual data point, and the predicted point. (i.e: point is price)
 
+```python
+cost = 0.5*(y_pred[i] - y_actual[i]) ** 2
+```
+
+- Resulted Cost:
+
+
+| Data Point | x (Size in 1000 sqft) | Actual y (Price in $1000s) | Predicted y (Price in $1000s) | Cost   |
+|------------|-----------------------|----------------------------|-------------------------------|--------|
+| 1          | 1.0                   | 319.87                     | 310.40                        | 44.87  |
+| 2          | 2.0                   | 494.47                     | 513.42                        | 179.47 |
+| 3          | 3.0                   | 725.91                     | 716.43                        | 44.87  |
 
 
 ### Dataset
