@@ -74,33 +74,40 @@ cost = 0.5*(y_pred[i] - y_actual[i]) ** 2
 
 #### Single Feature: Gradient Discent from scratch for Linear Regression
 - Here, we optimized the weight, and bais 
+
 - Gradient Descent minimizes the **Mean Squared Error (MSE)**:
+  As for every iteration first gradient is calculated which adjusts the weight, and the bias
+  ```pyhton
+  f_wb = w * x[i] + b 
+        error = (f_wb - y[i])  
+        dj_dw += error * x[i]  
+        dj_db += error
+  ```
+  Here f_wb is the predicted data point, and y[i] is the actual data point 
+  dj_dw is the partial derivative with respect to weight
+  dj_db is the partial derivative with respect to bias
 
-\[
-J(w, b) = \frac{1}{2m} \sum_{i=1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2
-\]
+- Then, the cost is calculated the distance between the actual, and predicted data point
+  ```python
+  f_wb = w * x[i] + b  
+        cost_i = (f_wb - y[i]) ** 2 
+        total_cost += cost_i
+  ```
 
-The **gradients** (derivatives of the cost function) are computed as:
+- At last the gradient descent is performed to optimize the weight, and the bias
+  ```python
+  w = w - alpha * dj_dw
+  b = b - alpha * dj_db
+  ```
 
-\[
-\frac{\partial J}{\partial w} = \frac{1}{m} \sum_{i=1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)}) x^{(i)}
-\]
+- These were the intial parameters:
 
-\[
-\frac{\partial J}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})
-\]
+  w_init = 0  
+  b_init = 0  
+  alpha = 0.1  
+  num_iters = 100  
 
-Gradient Descent updates `w` and `b` iteratively:
 
-\[
-w = w - \alpha \frac{\partial J}{\partial w}
-\]
-
-\[
-b = b - \alpha \frac{\partial J}{\partial b}
-\]
-
-where **\( \alpha \)** is the **learning rate**.
 ### Dataset
 
 [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
