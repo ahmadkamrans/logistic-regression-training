@@ -107,7 +107,8 @@ cost = 0.5*(y_pred[i] - y_actual[i]) ** 2
   alpha = 0.1  
   num_iters = 100  
 
-
+![alt text](images/image.png)
+![alt text](images/image%20copy.png)
 ### Dataset
 
 [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
