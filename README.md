@@ -4,7 +4,7 @@
 - Popular Home Features example for basic understanding of the Logistic Regression
 - After that, we will move forward to [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris) 
 
-#### Single Feature: Linear Regression using Model Function
+### Single Feature: Linear Regression using Model Function
 - Currently, if you take an example of housing dataset: 
     | Size (1000 sqft) | Price (1000s of dollars) |
     |------------------|--------------------------|
@@ -38,7 +38,7 @@
 
   the predicted price of the house came: **330.0 $**
 
-#### Single Feature: Linear Regression Model
+### Single Feature: Linear Regression Model
 
 - using the same dataset, but this time prediction is done through the Logisitc Regression Model 
 
@@ -72,7 +72,7 @@ cost = 0.5*(y_pred[i] - y_actual[i]) ** 2
 | 2          | 2.0                   | 494.47                     | 513.42                        | 179.47 |
 | 3          | 3.0                   | 725.91                     | 716.43                        | 44.87  |
 
-#### Single Feature: Gradient Discent from scratch for Linear Regression
+### Single Feature: Gradient Discent from scratch for Linear Regression
 - Here, we optimized the weight, and bais 
 
 - Gradient Descent minimizes the **Mean Squared Error (MSE)**:
@@ -109,6 +109,38 @@ cost = 0.5*(y_pred[i] - y_actual[i]) ** 2
 
 ![alt text](images/image.png)
 ![alt text](images/image%20copy.png)
+
+### Multiple Feature: Multiple Linear Regression
+
+- First we only had one feature like the price. Now we have multiple features columns.
+
+![alt text](images/Multiple%20Feature.png)
+
+So, now it will not be previous prediction formula: 
+```python 
+f_wb[i] = weight * x[i] + bias 
+```
+It wil be updated to include all features:
+```python 
+f_wb[i] = weight_1 * x_1[i] + weight_2 * x_2 + weight_3 * x_3 + weight_n * x_n + bias 
+```
+
+So, as we have list of weights, and features (x) make list of it:
+```python
+w = [w1,w2,w3,wn]
+x = [x1,x2,x3,xn]
+```
+
+it will be a dot product:
+```python
+f_wb = w . x + b
+```
+
+- So, now a simple base code was that we implement in that compute the prediction by a for loop. 
+- Instead in vectorization we will use **numpy library**:
+```python
+f = np.dot(w,x) + b
+```  
 ### Dataset
 
 [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
