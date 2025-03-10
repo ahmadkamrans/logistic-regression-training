@@ -110,7 +110,7 @@ cost = 0.5*(y_pred[i] - y_actual[i]) ** 2
 ![alt text](images/image.png)
 ![alt text](images/image%20copy.png)
 
-### Multiple Feature: Multiple Linear Regression
+### Multiple Feature: Vectorization
 
 - First we only had one feature like the price. Now we have multiple features columns.
 
@@ -141,6 +141,45 @@ f_wb = w . x + b
 ```python
 f = np.dot(w,x) + b
 ```  
+
+### Multiple Linear Regression: Linear Regression Model
+
+- We predicted the profits (**dependent variable**) based on remaining four features (**independent variables**):
+  1. R&D Speed
+  2. Administration
+  3. Marketing Speed
+  4. State
+  5. Profit
+- Here the first we separated the dependent, and independent variables:
+**Independent Variables:** 
+```python
+x = dataSet.iloc[:, :-1]
+x.head(5)
+```
+**Dependent Variable:**
+```python
+y = dataSet.iloc[:, -1]
+y.head(5)
+```
+
+Now next step is to deal the **categorical data** column which the **states** one: 
+```python
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [3])], remainder='passthrough')
+X = np.array(ct.fit_transform(x))
+```
+So we made a pipeline for making 3 columns in binary out of one categorical column named states:
+ - Presence is indicated by **1**
+ - Absense  is indicated by **0**
+
+Before one hot encoding: 
+![alt text](images/startup.png)
+After one hot encoding:
+![alt text](images/onehotencoding.png)
+
+
 ### Dataset
 
 [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
+[50_startups_Dataset](https://gist.github.com/GaneshSparkz/b5662effbdae8746f7f7d8ed70c42b2d)
