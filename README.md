@@ -170,14 +170,29 @@ ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [3])], remaind
 X = np.array(ct.fit_transform(x))
 ```
 So we made a pipeline for making 3 columns in binary out of one categorical column named states:
- - Presence is indicated by **1**
- - Absense  is indicated by **0**
+- Presence is indicated by **1**
+- Absense  is indicated by **0**
 
 Before one hot encoding: 
+
 ![alt text](images/startup.png)
+
 After one hot encoding:
+
 ![alt text](images/onehotencoding.png)
 
+Now, as we have prepared the dataset. So, we will split the data:
+- Train Set will be **80%**
+- Test Set will be **20%**
+
+```python
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_set = train_test_split(X, y, test_size=0.2, random_state=0)
+```
+
+After training the model, these were results on test dataset:
+
+![alt text](images/predicted.png)
 
 ### Dataset
 
