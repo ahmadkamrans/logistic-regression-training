@@ -194,6 +194,40 @@ After training the model, these were results on test dataset:
 
 ![alt text](images/predicted.png)
 
+
+### SVR: Simple Vector Regression
+
+Support Vector Regression is a regression technique that uses principle of the SVM's to predict continous values. Unlike traditional regression models minimizing the error directly, SVR tries to fit the best line (or hyperplane) within a certain margin of tolerance called epsilon, making it robust to outliers. 
+
+**How SVR Works:**
+
+- **Epsilon-Insensitive Loss Function**: Predictions within a given margin (ε) are not penalized.
+- **Support Vectors**: Only data points outside the ε-margin influence the model.
+- **Kernel Trick**: SVR can use kernels (**rbf**) to capture non-linearity in data.
+
+**Working:** 
+
+- Data preprocessing:
+```python
+dataset = pd.read_csv("dataset/Position_Salaries.csv")
+dataset
+
+X.values
+Y.values 
+```
+
+- Feature Scaling:
+```python
+from sklearn.preprocessing import StandardScaler
+sc_X = StandardScaler()
+sc_Y = StandardScaler()
+X = sc_X.fit_transform(X)
+Y = sc_Y.fit_transform(Y)
+```
+
+- Visualize the prediction
+![alt text](images/SVR.png)
+
 ### Dataset
 
 [Iris Dataset](https://archive.ics.uci.edu/dataset/53/iris)
